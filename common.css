@@ -1,0 +1,16 @@
+/* reset css */
+div {
+  margin: 0;
+  padding: 0;
+}
+
+.wrap {
+  width: calc(100vw - 120px);
+  height: calc(100vh - 120px);
+  margin: 60px auto;
+  border: 1px solid #ddd;
+  box-sizing: border-box;
+}
+
+article {
+}
