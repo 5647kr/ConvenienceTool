@@ -1,0 +1,72 @@
+article {
+  width: 100%;
+  height: 100%;
+  padding: 60px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  gap: 60px;
+}
+
+.regTodoWrap {
+  width: 400px;
+  height: 100%;
+}
+
+.regTodoWrap form {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.regTodoWrap label {
+  display: block;
+  font-size: 30px;
+}
+
+.regTodoWrap label:not(:first-child) {
+  margin-top: 20px;
+}
+
+.regTodoWrap input, textarea {
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 20px;
+  border-radius: 0;
+  border: 1px solid #ddd;
+}
+
+.regTodoWrap input, 
+.regTodoWrap textarea:focus {
+  outline: none;
+}
+
+.regTodoWrap input {
+  min-height: 60px;
+  padding: 12px;
+  box-sizing: border-box;
+}
+
+.regTodoWrap textarea {
+  resize: none;
+  padding: 12px;
+  flex-grow: 1;
+  box-sizing: border-box;
+}
+
+.regTodoWrap .regBtn {
+  width: 100%;
+  border-radius: 0;
+  border: none;
+  background-color: #ddd;
+  font-size: 26px;
+  padding: 4px;
+  min-height: 46px;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+
+.todoListWrap {
+  flex-grow: 1;
+}

@@ -4,11 +4,37 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../common.css">
-  <title>test</title>
+  <link rel="stylesheet" href="./style.css">
+  <title>TodoList</title>
 </head>
 <body>
   <div class="wrap">
     <article>
+      <div class="regTodoWrap">
+        <form action="#">
+          <label for="todoTitle">
+            제목
+          </label>
+          <input type="text" id="todoTitle">
+
+          <label for="todoDate">
+            완료일
+          </label>
+          <input type="date" id="todoDate">
+
+          <label for="todoContent">
+            내용
+          </label>
+          <textarea name="" id="todoContent"></textarea>
+
+          <button class="regBtn">
+            등록
+          </button>
+        </form>
+      </div>
+      <div class="todoListWrap">
+        등록된 todo 정리
+      </div>
     </article>
   </div>
 </body>
