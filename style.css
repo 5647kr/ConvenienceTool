@@ -36,3 +36,7 @@ a {
 .calculateLink {
   background: url(./img/Calculate-Wrap.png) no-repeat center center / 100% 100%;
 }
+
+.calendarLink {
+  background: url(./img/Calendar-Wrap.png) no-repeat center center / 100% 100%;
+}
