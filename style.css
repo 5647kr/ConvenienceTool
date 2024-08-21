@@ -32,3 +32,7 @@ a {
 .todoLink {
   background: url(./img/TodoList-Wrap.png) no-repeat center center / 100% 100%;
 }
+
+.calculateLink {
+  background: url(./img/Calculate-Wrap.png) no-repeat center center / 100% 100%;
+}
