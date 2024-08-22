@@ -9,6 +9,7 @@
 </head>
 <body>
   <div class="wrap">
+    <h1 class="a11y-hidden">TodoList</h1>
     <article>
       <div class="regTodoWrap">
         <form action="#">
@@ -33,7 +34,36 @@
         </form>
       </div>
       <div class="todoListWrap">
-        등록된 todo 정리
+        <div class="todayTodo">
+          <h2>Today Todo</h2>
+          <ul>
+            ...
+          </ul>
+        </div>
+        <div class="nextdayTodo">
+          <h2>NextDay Todo</h2>
+          <ul>
+            <li>
+              <h3>할일1</h3>
+              <span>
+                <button type="button">Edit</button>
+                <button type="button">Del</button>
+              </span>
+            </li>
+          </ul>
+        </div>
+        <div class="doingTodo">
+          <h2>Doing List</h2>
+          <ul>
+            ...
+          </ul>
+        </div>
+        <div class="doneTodo">
+          <h2>Done List</h2>
+          <ul>
+            ...
+          </ul>
+        </div>
       </div>
     </article>
   </div>
