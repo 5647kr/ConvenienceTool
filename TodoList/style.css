@@ -113,6 +113,9 @@ article {
   height: calc(100% - 60px);
   overflow: auto;
   margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
 .todoListWrap .listItem {
