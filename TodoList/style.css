@@ -1,3 +1,8 @@
+article, div, form, label, input, textarea, button, h1, h2, h3 {
+  margin: 0;
+  padding: 0;
+}
+
 .a11y-hidden {
   clip: rect(1px, 1px, 1px, 1px);
   clip-path: inset(50%);
@@ -9,160 +14,125 @@
   position: absolute;
 }
 
-body, div, h1, h2, h3, form, input, label, button, ul, li, article {
-  margin: 0;
-  padding: 0;
-}
-
-button {
-  cursor: pointer;
+.wrap {
+  padding: 60px;
+  box-sizing: border-box;
 }
 
 article {
   width: 100%;
   height: 100%;
-  padding: 60px;
-  box-sizing: border-box;
   display: flex;
   justify-content: space-between;
   gap: 60px;
 }
 
-.regTodoWrap {
-  width: 400px;
-  height: 100%;
+article > div {
+  border: 1px solid #ddd;
+  box-sizing: border-box;
 }
 
-.regTodoWrap form {
+article .regWrap {
+  width: 400px;
+}
+
+.regWrap form {
   height: 100%;
+  position: relative;
   display: flex;
   flex-direction: column;
+  box-shadow: inset 0 0 10px red;
 }
 
-.regTodoWrap label {
-  display: block;
-  font-size: 30px;
+.regWrap label {
+  font-weight: bold;
+  font-size: 28px;
 }
 
-.regTodoWrap label:not(:first-child) {
+.regWrap label:not(:first-child) {
   margin-top: 20px;
 }
 
-.regTodoWrap input, textarea {
+.regWrap input, textarea {
   width: 100%;
   box-sizing: border-box;
-  font-size: 20px;
-  border-radius: 0;
   border: 1px solid #ddd;
+  font-size: 16px;
 }
 
-.regTodoWrap input, 
-.regTodoWrap textarea:focus {
+.regWrap input {
+  padding: 10px 12px;
+}
+
+.regWrap textarea {
+  flex-grow: 1;
+  resize: none;
+  padding: 10px 12px;
+}
+
+.regWrap input:focus, 
+.regWrap textarea:focus {
   outline: none;
 }
 
-.regTodoWrap input {
-  min-height: 60px;
-  padding: 12px;
-  box-sizing: border-box;
-}
-
-.regTodoWrap textarea {
-  resize: none;
-  padding: 12px;
-  flex-grow: 1;
-  box-sizing: border-box;
-}
-
-.regTodoWrap .regBtn {
-  width: 100%;
-  border-radius: 0;
-  border: none;
-  background-color: #ddd;
-  font-size: 26px;
-  padding: 4px;
-  min-height: 46px;
+.regWrap .regBtn {
   margin-top: 20px;
+  font-size: 28px;
+  font-weight: bold;
+  padding: 6px 0;
+  box-sizing: border-box;
+  background-color: #ddd;
+  border: none;
   cursor: pointer;
 }
 
-
-.todoListWrap {
-  flex-grow: 1;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(2, 1fr);
-  border: 1px solid #ddd;
-}
-
-.todoListWrap div {
-  width: 100%;
-  max-height: 100%;
-  padding: 20px;
-  box-sizing: border-box;
-}
-
-.todoListWrap div h2 {
-  text-align: center;
-  height: 40px;
-  background-color: #ddd;
-  line-height: 40px;
-}
-
-.todoListWrap div ul {
-  height: calc(100% - 60px);
-  overflow: auto;
-  margin-top: 20px;
+.regWrap .stateInput {
+  position: absolute;
+  right: 0;
+  top: 0;
   display: flex;
-  flex-direction: column;
-  gap: 16px;
+  gap: 6px;
 }
 
-.todoListWrap .listItem {
-  border: 1px solid #ddd;
-  padding: 8px 0 8px 12px;
+.stateInput input[type="radio"] {
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  padding: 0;
+  border-radius: 50%;
+  border: 1px solid #d9d9d9;
+  background-color: transparent;
+  outline: none;
+  cursor: pointer;
   position: relative;
 }
 
-.listItem h3 {
-  font-weight: normal;
-  display: inline-block;
-}
-
-.listItem span {
-  height: 100%;
+.stateInput input[type="radio"]::before {
+  content: '';
   position: absolute;
-  top: 0;
-  right: 0;
-  display: flex;
-}
-
-.listItem span button {
-  display: inline-block;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
   height: 100%;
-  width: 20px;
-  font-size: 8px;
-  background-color: #fff;
-  border: none;
+  border-radius: 50%;
 }
 
-.listItem span .editBtn {
-  border-left: 1px solid #ddd;
-  border-right: 1px solid #ddd;
-  color: blue;
+.stateInput .todoInput::before {
+  background-color: #FF0000;
 }
 
-.listItem span .delBtn {
-  color: red;
+.stateInput .doingInput::before {
+  background-color: #FFA500;
 }
 
-.todoListWrap .listItem .detail {
-  display: block;
-  position: absolute;
-  right: 0;
-  top: 100%;
-  width: 40px;
-  height: 8px;
-  padding: 0;
-  background-color: #ddd;
+.stateInput .doneInput::before {
+  background-color: #008000;
 }
+
+article .listWrap {
+  flex-grow: 1;
+}
+
+
+

@@ -5,85 +5,34 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../common.css">
   <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <title>TodoList</title>
 </head>
 <body>
   <div class="wrap">
     <h1 class="a11y-hidden">TodoList</h1>
     <article>
-      <div class="regTodoWrap">
-        <form action="#">
-          <label for="todoTitle">
-            제목
-          </label>
-          <input type="text" id="todoTitle">
+      <div class="regWrap">
+        <form action="">
+          <label for="titleInput">Title</label>
+          <input type="text" id="titleInput" autocomplete="off">
 
-          <label for="todoDate">
-            완료일
-          </label>
-          <input type="date" id="todoDate">
+          <label for="contentInput">Content</label>
+          <textarea name="" id="contentInput" autocomplete="off"></textarea>
 
-          <label for="todoContent">
-            내용
-          </label>
-          <textarea name="" id="todoContent"></textarea>
+          <div class="stateInput">
+            <label for="stateInput" class="a11y-hidden">라디오 버튼 상태관리</label>
+            <input type="radio" name="stateInput" class="todoInput">
+            <input type="radio" name="stateInput" class="doingInput">
+            <input type="radio" name="stateInput" class="doneInput">
+          </div>
 
-          <button class="regBtn">
-            등록
+          <button type="submit" class="regBtn">
+            Register
           </button>
         </form>
       </div>
-      <div class="todoListWrap">
-        <div class="todayTodo">
-          <h2>Today Todo</h2>
-          <ul>
-            ...
-          </ul>
-        </div>
-        <div class="nextdayTodo">
-          <h2>NextDay Todo</h2>
-          <ul>
-            <li class="listItem">
-              <h3>할일1</h3>
-              <span>
-                <button type="button" class="editBtn">Edit</button>
-                <button type="button" class="delBtn">Del</button>
-              </span>
-              <div class="detail">
-              </div>
-            </li>
-            <li class="listItem">
-              <h3>할일1</h3>
-              <span>
-                <button type="button" class="editBtn">Edit</button>
-                <button type="button" class="delBtn">Del</button>
-              </span>
-              <div class="detail">
-              </div>
-            </li>
-            <li class="listItem">
-              <h3>할일1</h3>
-              <span>
-                <button type="button" class="editBtn">Edit</button>
-                <button type="button" class="delBtn">Del</button>
-              </span>
-              <div class="detail">
-              </div>
-            </li>
-          </ul>
-        </div>
-        <div class="doingTodo">
-          <h2>Doing List</h2>
-          <ul>
-            ...
-          </ul>
-        </div>
-        <div class="doneTodo">
-          <h2>Done List</h2>
-          <ul>
-            ...
-          </ul>
-        </div>
+      <div class="listWrap">listWrap
       </div>
     </article>
   </div>
