@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../common.css">
   <link rel="stylesheet" href="./style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <title>TodoList</title>
 </head>
 <body>
@@ -15,14 +14,14 @@
       <div class="regWrap">
         <form action="">
           <label for="titleInput">Title</label>
-          <input type="text" id="titleInput" autocomplete="off">
+          <input type="text" id="titleInput" autocomplete="off" maxlength="15">
 
           <label for="contentInput">Content</label>
           <textarea name="" id="contentInput" autocomplete="off"></textarea>
 
           <div class="stateInput">
             <label for="stateInput" class="a11y-hidden">라디오 버튼 상태관리</label>
-            <input type="radio" name="stateInput" class="todoInput">
+            <input type="radio" name="stateInput" checked class="todoInput">
             <input type="radio" name="stateInput" class="doingInput">
             <input type="radio" name="stateInput" class="doneInput">
           </div>
@@ -36,12 +35,39 @@
       <div class="listWrap">
         <div class="todoList">
           <h2>todo List</h2>
+          <ul>
+            <li>
+              <h3>할 일</h3>
+              <div class="setBtnWrap">
+                <button type="button" class="editBtn">Edit</button>
+                <button type="button" class="delBtn">Del</button>
+              </div>
+            </li>
+          </ul>
         </div>
         <div class="doingList">
           <h2>doing List</h2>
+          <ul>
+            <li>
+              <h3>진행 중</h3>
+              <div class="setBtnWrap">
+                <button type="button" class="editBtn">Edit</button>
+                <button type="button" class="delBtn">Del</button>
+              </div>
+            </li>
+          </ul>
         </div>
         <div class="doneList">
           <h2>done List</h2>
+          <ul>
+            <li class="done">
+              <h3>완료</h3>
+              <div class="setBtnWrap">
+                <button type="button" class="editBtn">Edit</button>
+                <button type="button" class="delBtn">Del</button>
+              </div>
+            </li>
+          </ul>
         </div>
       </div>
     </article>

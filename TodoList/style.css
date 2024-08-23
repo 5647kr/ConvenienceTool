@@ -98,7 +98,7 @@ article .regWrap {
   height: 16px;
   padding: 0;
   border-radius: 50%;
-  border: 1px solid #d9d9d9;
+  border: 1px solid #ddd;
   background-color: transparent;
   outline: none;
   cursor: pointer;
@@ -114,18 +114,19 @@ article .regWrap {
   width: 100%;
   height: 100%;
   border-radius: 50%;
+  background-color: #ddd;
 }
 
-.stateInput .todoInput::before {
-  background-color: #FF0000;
+.stateInput .todoInput:checked:before {
+  background: #ff0000 url(../img/todo.svg) no-repeat center center;
 }
 
-.stateInput .doingInput::before {
-  background-color: #FFA500;
+.stateInput .doingInput:checked::before {
+  background: #FFA500 url(../img/doing.svg) no-repeat center center;
 }
 
-.stateInput .doneInput::before {
-  background-color: #008000;
+.stateInput .doneInput:checked::before {
+  background: #008000 url(../img/done.svg) no-repeat center center;
 }
 
 article .listWrap {
@@ -134,6 +135,7 @@ article .listWrap {
   grid-template-areas: 
   "todoList doingList"
   "todoList doneList";
+  grid-template-columns: repeat(2, 1fr);
   border: none;
 }
 
@@ -141,6 +143,10 @@ article .listWrap {
   padding: 20px;
   box-sizing: border-box;
   border: 1px solid #ddd;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  overflow-y: auto;
 }
 
 .listWrap h2 {
@@ -149,6 +155,64 @@ article .listWrap {
   padding: 4px 0 5px;
   background-color: #ddd;
 }
+
+.listWrap ul {
+  flex-grow: 1;
+  overflow-y: auto;
+}
+
+.listWrap ul li {
+  width: 100%;
+  padding: 4px 12px;
+  box-sizing: border-box;
+  border: 1px solid #ddd;
+  position: relative;
+  cursor: pointer;
+}
+
+.listWrap ul li:not(:first-child) {
+  margin-top: 16px;
+}
+
+.listWrap ul li h3 {
+  font-size: 18px;
+  width: fit-content;
+}
+
+.listWrap ul li.done h3 {
+  color: #ddd;
+  text-decoration: line-through #ddd;
+}
+
+.listWrap ul li .setBtnWrap {
+  box-shadow: inset 0 0 10px black;
+  position: absolute;
+  width: 62px;
+  height: 100%;
+  top: 0;
+  right: 0;
+  display: flex;
+}
+
+.setBtnWrap button {
+  width: 50%;
+  box-sizing: border-box;
+  background-color: #fff;
+  border: none;
+  border-radius: 0;
+  border-left: 1px solid #ddd;
+  cursor: pointer;
+}
+
+.setBtnWrap .editBtn {
+  color: #008000;
+}
+
+.setBtnWrap .delBtn {
+  color: #ff0000;
+}
+
+
 
 .listWrap .todoList {
   grid-area: todoList;
