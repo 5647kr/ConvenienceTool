@@ -14,10 +14,10 @@
       <div class="regWrap">
         <form action="">
           <label for="titleInput">Title</label>
-          <input type="text" id="titleInput" autocomplete="off" maxlength="15">
+          <input type="text" id="titleInput" autocomplete="off" maxlength="15" required>
 
           <label for="contentInput">Content</label>
-          <textarea name="" id="contentInput" autocomplete="off"></textarea>
+          <textarea name="" id="contentInput" autocomplete="off" required></textarea>
 
           <div class="stateInput">
             <label for="stateInput" class="a11y-hidden">라디오 버튼 상태관리</label>
@@ -26,7 +26,7 @@
             <input type="radio" name="stateInput" class="doneInput">
           </div>
 
-          <button type="button" class="regBtn">
+          <button type="submit" class="regBtn">
             Register
           </button>
         </form>

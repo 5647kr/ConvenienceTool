@@ -30,6 +30,12 @@ function regTodo() {
   let id = JSON.parse(localStorage.getItem("id"));
   id = id ?? 0;
 
+  if(todoTitle === "" || todoContent === "") {
+    regBtn.setAttribute("disabled");
+  } else {
+    regBtn.removeAttribute("disabled");
+  }
+
   const todoItem = {
     title: todoTitle,
     content: todoContent,
@@ -39,6 +45,8 @@ function regTodo() {
   
   localStorage.setItem("todo", JSON.stringify(todo));
   localStorage.setItem("id", JSON.stringify(id++));
+
+  showTodo();
 
   // 초기화
   titleInput.value = "";
@@ -51,4 +59,35 @@ regBtn.addEventListener("click", () => {
   regTodo();
 })
 
+function showTodo() {
+  todo.map((item) => {
+    const li = document.createElement("li");
+    const h3 = document.createElement("h3");
+    const div = document.createElement("div");
+    const editBtn  = document.createElement("button");
+    const delBtn  = document.createElement("button");
 
+    li.id = item.id
+    h3.innerText = item.title;
+    
+    div.classList.add("setBtnWrap");
+    editBtn.innerText = "Edit";
+    editBtn.classList.add("editBtn");
+    delBtn.innerText = "Del";
+    delBtn.classList.add("delBtn");
+    div.append(editBtn, delBtn);
+
+    li.append(h3, div);
+
+    if(item.state === "todo") {
+      todoList.appendChild(li);
+    } else if(item.state === "doing") {
+      doingList.appendChild(li);
+    } else {
+      li.classList.add("done");
+      doneList.appendChild(li);
+    }
+  })
+}
+
+showTodo();
