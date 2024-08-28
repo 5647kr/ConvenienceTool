@@ -136,7 +136,9 @@ article .listWrap {
   "todoList doingList"
   "todoList doneList";
   grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
   border: none;
+  height: 100%;
 }
 
 .listWrap > div {
@@ -146,7 +148,6 @@ article .listWrap {
   display: flex;
   flex-direction: column;
   gap: 20px;
-  overflow-y: auto;
 }
 
 .listWrap h2 {
@@ -159,6 +160,11 @@ article .listWrap {
 .listWrap ul {
   flex-grow: 1;
   overflow-y: auto;
+}
+
+/* 스크롤 안보이게 처리 */
+.listWrap ul::-webkit-scrollbar {
+  display: none;
 }
 
 .listWrap ul li {
@@ -226,6 +232,7 @@ article .listWrap {
 .listWrap .doingList {
   grid-area: doingList;
   border-bottom: none;
+  overflow-y: auto;
 }
 
 .doingList h2 {
@@ -234,6 +241,7 @@ article .listWrap {
 
 .listWrap .doneList {
   grid-area: doneList;
+  overflow-y: auto;
 }
 
 .doneList h2 {
