@@ -66,15 +66,13 @@ function stateTodoList(state) {
 
 // Todo 등록 함수
 function regTodo() {
-  const todoTitle = titleInput.value;
-  const todoContent = contentInput.value;
+  const todoTitle = titleInput.value.trim();
+  const todoContent = contentInput.value.trim();
 
   // 값 입력 확인
   if(!todoTitle || !todoContent) {
     alert("제목 또는 내용을 입력하세요!");
-    regBtn.disabled = true;
-  } else {
-    regBtn.disabled = false;
+    return;
   }
 
   const todoItem = {
@@ -100,6 +98,17 @@ function regTodo() {
 regBtn.addEventListener("click", () => {
   regTodo();
 });
+
+// Todo 입력 값 유효성 검사
+function todoValidate() {
+  const todoTitle = titleInput.value.trim();
+  const todoContent = contentInput.value.trim();
+
+  regBtn.disabled = !todoTitle || !todoContent;
+}
+
+titleInput.addEventListener("input", todoValidate);
+contentInput.addEventListener("input", todoValidate);
 
 
 // Todo 표시 함수
