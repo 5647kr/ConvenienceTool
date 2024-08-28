@@ -51,6 +51,8 @@ function setTodo(todoItem) {
 
   btnBox.append(editBtn, delBtn);
   todoLi.append(todoTitle, btnBox);
+
+  manageTodo(editBtn, delBtn, todoLi.id);
   
   stateTodoList(todoItem.state).appendChild(todoLi);
 }
@@ -99,6 +101,7 @@ regBtn.addEventListener("click", () => {
   regTodo();
 });
 
+
 // Todo 입력 값 유효성 검사
 function todoValidate() {
   const todoTitle = titleInput.value.trim();
@@ -109,6 +112,38 @@ function todoValidate() {
 
 titleInput.addEventListener("input", todoValidate);
 contentInput.addEventListener("input", todoValidate);
+
+
+// Todo 관리 함수
+function manageTodo(editBtn, delBtn, id) {
+  editBtn.addEventListener("click", () => editTodo(id));
+  delBtn.addEventListener("click", () => delTodo(id));
+}
+
+
+// Todo 수정 함수
+function editTodo(id) {
+  console.log(id)
+}
+
+
+// Todo 삭제 함수
+function delTodo(id) {
+  // 1. id와 일치하지 않는 항목만 필터링하여 새로운 배열 생성
+  todo = todo.filter(item => item.id !== parseInt(id));
+
+  // 2. 변경된 todo 배열을 로컬 스토리지에 저장
+  localStorage.setItem("todo", JSON.stringify(todo));
+
+  // 3. UI에서 해당 항목을 제거
+  const todoLi = document.getElementById(id);
+  if (todoLi) {
+    todoLi.remove();
+  }
+}
+
+
+
 
 
 // Todo 표시 함수
