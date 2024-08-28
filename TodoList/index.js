@@ -190,3 +190,47 @@ function displayTodo() {
 }
 
 displayTodo();
+
+
+// Todo 상세표시 함수
+// Todo 상세표시 함수
+function todoDetail() {
+  const todoListItems = listGroup.querySelectorAll("ul li");
+  
+  // 모달 생성
+  const modal = document.createElement("div");
+  modal.id = "modal";
+  
+  const modalContent = document.createElement("div");
+  modalContent.classList.add("modalContent");
+  
+  const modalTitle = document.createElement("h2");
+  const modalText = document.createElement("p");
+  const modalCloseBtn = document.createElement("button");
+  
+  modalCloseBtn.textContent = "Close";
+  modalCloseBtn.addEventListener("click", () => {
+    modal.classList.remove("active");
+  });
+
+  modalContent.append(modalTitle, modalText, modalCloseBtn);
+  modal.append(modalContent);
+  wrap.append(modal);
+
+  // ul에 클릭 이벤트 리스너 추가 (이벤트 위임)
+  todoList.addEventListener("click", (e) => {
+    if (e.target.tagName === "LI" || e.target.closest("li")) {
+      const clickedItem = e.target.closest("li");
+      const todoItem = todo.find(item => item.id === parseInt(clickedItem.id));
+      if (todoItem) {
+        modalTitle.textContent = todoItem.title;
+        modalText.textContent = todoItem.content;
+
+        modal.classList.add("active"); // 모달 열기
+      }
+    }
+  });
+}
+
+
+todoDetail();
