@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../common.css">
+  <link rel="stylesheet" href="./style.css">
+  <title>Calculate</title>
+</head>
+<body>
+  <div class="wrap">
+    <h1 class="a11y-hidden">계산기</h1>
+    <article class="calculate">
+      <div class="prev">이전 계산식</div>
+      <div class="result">결과값</div>
+      <div class="calcTable">
+        <table>
+          <tr>
+            <td colspan="2">
+              <button>C</button>
+            </td>
+            <td>
+              <button>x²</button>
+            </td>
+            <td>
+              <button>+</button>
+          </td>
+          </tr>
+          <tr>
+            <td>
+              <button>7</button>
+            </td>
+            <td>
+              <button>8</button>
+            </td>
+            <td>
+              <button>9</button>
+            </td>
+            <td>
+              <button>-</button>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <button>4</button>
+            </td>
+            <td>
+              <button>5</button>
+            </td>
+            <td>
+              <button>6</button>
+            </td>
+            <td>
+              <button>×</button>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <button>1</button>
+            </td>
+            <td>
+              <button>2</button>
+            </td>
+            <td>
+              <button>3</button>
+            </td>
+            <td>
+              <button>÷</button>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <button>.</button>
+            </td>
+            <td>
+              <button>0</button>
+            </td>
+            <td colspan="2">
+              <button>=</button>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </article>
+
+    <article class="translate">
+      <div class="length">
+        <h2>길이</h2>
+        <div class="transInput">
+          <label for="input" class="a11y-hidden">변환</label>
+          <input type="number">
+          <select>
+            <option>mm(밀리미터)</option>
+            <option>cm(센티미터)</option>
+            <option>m(미터)</option>
+            <option>km(킬로미터)</option>
+            <option>in(인치)</option>
+            <option>ft(피트)</option>
+            <option>yd(야드)</option>
+            <option>mile(마일)</option>
+          </select>
+        </div>
+        <div class="result">
+          <ul>
+            <li>
+              <label>밀리미터(mm)</label>
+              <input type="text" readonly>
+            </li>
+            <li>
+              <label>센티미터(cm)</label>
+              <input type="text" readonly>
+            </li>
+            <li>
+              <label>미터(m)</label>
+              <input type="text" readonly>
+            </li>
+            <li>
+              <label>킬로미터(km)</label>
+              <input type="text" readonly>
+            </li>
+            <li>
+              <label>인치(in)</label>
+              <input type="text" readonly>
+            </li>
+            <li>
+              <label>피트(ft)</label>
+              <input type="text" readonly>
+            </li>
+            <li>
+              <label>야드(yd)</label>
+              <input type="text" readonly>
+            </li>
+            <li>
+              <label>마일(mile)</label>
+              <input type="text" readonly>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="extend">
+        <h2>넓이</h2>
+        <div class="transInput">
+          <label for="input" class="a11y-hidden">변환</label>
+          <input type="number">
+          <select>
+            <option>제곱미터(m²)</option>
+            <option>헥타르(ha)</option>
+            <option>제곱킬로미터(km²)</option>
+            <option>제곱피트(ft²)</option>
+            <option>제곱야드(yd²)</option>
+            <option>평</option>
+          </select>
+        </div>
+        <div class="result">
+          <ul>
+            <li>
+              <label>제곱미터(m²)</label>
+              <input type="text" readonly>
+            </li>
+            <li>
+              <label>헥타르(ha)</label>
+              <input type="text" readonly>
+            </li>
+            <li>
+              <label>제곱킬로미터(km²)</label>
+              <input type="text" readonly>
+            </li>
+            <li>
+              <label>제곱피드(ft²)</label>
+              <input type="text" readonly>
+            </li>
+            <li>
+              <label>제곱야드(yd²)</label>
+              <input type="text" readonly>
+            </li>
+            <li>
+              <label>평</label>
+              <input type="text" readonly>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="weight">
+        <h2>무게</h2>
+        <div class="transInput">
+          <label for="input" class="a11y-hidden">변환</label>
+          <input type="number">
+          <select>
+            <option>밀리그램(mg)</option>
+            <option>그램(g)</option>
+            <option>킬로그램(kg)</option>
+            <option>톤(t)</option>
+            <option>킬로톤(kt)</option>
+            <option>파운드(lb)</option>
+          </select>
+        </div>
+        <div class="result">
+          <ul>
+            <li>
+              <label>밀리그램(mg)</label>
+              <input type="text" readonly>
+            </li>
+            <li>
+              <label>그램(g)</label>
+              <input type="text" readonly>
+            </li>
+            <li>
+              <label>킬로그램(kg)</label>
+              <input type="text" readonly>
+            </li>
+            <li>
+              <label>톤(t)</label>
+              <input type="text" readonly>
+            </li>
+            <li>
+              <label>킬로톤(kt)</label>
+              <input type="text" readonly>
+            </li>
+            <li>
+              <label>파운드(lb)</label>
+              <input type="text" readonly>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="temperate">
+        <h2>온도</h2>
+        <div class="transInput">
+          <label for="input" class="a11y-hidden">변환</label>
+          <input type="number">
+          <select>
+            <option>섭씨(°C)</option>
+            <option>화씨(°F)</option>
+            <option>절대온도(K)</option>
+            <option>°R</option>
+          </select>
+        </div>
+        <div class="result">
+          <ul>
+            <li>
+              <label>섭씨(°C)</label>
+              <input type="text" readonly>
+            </li>
+            <li>
+              <label>화씨(°F)</label>
+              <input type="text" readonly>
+            </li>
+            <li>
+              <label>절대온도(K)</label>
+              <input type="text" readonly>
+            </li>
+            <li>
+              <label>°R</label>
+              <input type="text" readonly>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </article>
+  </div>
+</body>
+</html>

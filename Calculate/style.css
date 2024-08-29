@@ -1,0 +1,152 @@
+article, div, table, tr, td, button, h1, h2 {
+  margin: 0;
+  padding: 0;
+}
+
+.a11y-hidden {
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+}
+
+.wrap {
+  display: flex;
+  gap: 60px; 
+  padding: 60px;
+  box-sizing: border-box;
+}
+
+.calculate  {
+  width: 400px;
+  height: 100%;
+  padding: 20px;
+  border: 1px solid #ddd;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.calculate > div {
+  width: 100%;
+}
+
+.calculate .prev {
+  flex-grow: 1;
+  border: 1px solid #ddd;
+}
+
+.calculate .result {
+  height: 100px;
+  border: 1px solid #ddd;
+  box-sizing: border-box;
+}
+
+.calcTable table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid #ddd;
+  
+}
+
+.calcTable table tr {
+  width: 100%;
+}
+
+.calcTable table tr td {
+  border: 1px solid #ddd;
+  border-collapse: collpase;
+  width: calc(100% / 4);
+}
+
+.calcTable table button {
+  background-color: #fff;
+  border: none;
+  width: 100%;
+  height: 100%;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 40px;
+}
+
+.translate {
+  height: 100%;
+  flex-grow: 1;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+}
+
+.translate > div {
+  padding: 20px;
+  box-sizing: border-box;
+  border: 1px solid #ddd;
+  border-collapse: collapse;
+  overflow-y: auto;
+}
+
+.translate > div:nth-child(odd) {
+  border-right: 0;
+}
+
+.translate > div:nth-child(3) {
+  border-top: 0;
+}
+
+.translate > div:nth-child(4) {
+  border-top: 0;
+}
+
+.translate > div h2 {
+  width: 100%;
+  background-color: #ddd;
+  text-align: center;
+  font-size: 26px;
+  padding: 7px 0 6px;
+}
+
+.transInput {
+  margin-top: 20px;
+  display: flex;
+  font-size: 18px;
+}
+
+.transInput input {
+  flex-grow: 1;
+}
+
+.result ul {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px 14px;
+  margin-top: 20px;
+}
+
+.result ul li {
+  display: block;
+}
+
+.result label {
+  display: block;
+  font-size: 10px;
+  font-weight: bold;
+}
+
+.result input {
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 0;
+  border: 1px solid #ddd;
+  cursor: default;
+}
+
+.result input:focus {
+  outline: none;
+}
