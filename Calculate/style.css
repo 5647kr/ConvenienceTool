@@ -118,6 +118,24 @@ article, div, table, tr, td, button, h1, h2 {
 
 .transInput input {
   flex-grow: 1;
+  border-radius: 0;
+  border: 1px solid #ddd;
+  border-right: 0;
+}
+
+.transInput input:focus {
+  outline: none;
+}
+
+.transInput select {
+  border-radius: 0;
+  border: 1px solid #ddd;
+  border-left: 0;
+  text-align: right;
+}
+
+.transInput select:focus {
+  outline: none;
 }
 
 .result ul {
