@@ -88,6 +88,8 @@ article, div, table, tr, td, button, h1, h2 {
   border: 1px solid #ddd;
   border-collapse: collapse;
   overflow-y: auto;
+  display: flex;
+  flex-direction: column;
 }
 
 .translate > div:nth-child(odd) {
@@ -118,24 +120,13 @@ article, div, table, tr, td, button, h1, h2 {
 }
 
 .transInput input {
-  flex-grow: 1;
-  width: calc(100% - 158.5px);
-  border-radius: 0;
-  border: 1px solid #ddd;
-  border-right: 0;
-  font-size: 18px;
-  font-weight: bold;
+  padding: 4px 0 4px 12px;
   box-sizing: border-box;
-}
-
-.transInput input::-webkit-outer-spin-button,
-.transInput input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
-input[type='number'] {
-  -moz-appearance: textfield;
+  font-weight: bold;
+  flex-grow: 1;
+  border: 1px solid #ddd;
+  border-right: none;
+  border-radius: 0;
 }
 
 .transInput input:focus {
@@ -145,44 +136,45 @@ input[type='number'] {
 .transInput select {
   border-radius: 0;
   border: 1px solid #ddd;
-  border-left: 0;
   text-align: right;
-  font-size: 18px;
   font-weight: bold;
-  display: inline-block;
+  border-left: none;
 }
 
 .transInput select:focus {
   outline: none;
 }
 
-.result ul {
+.transResult {
+  width: 100%;
+  height: 100%;
+  margin-top: 12px;
+  flex-grow: 1;
+  overflow-y: auto;
+}
+
+.transResult ul {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 10px 14px;
-  margin-top: 20px;
 }
 
-.result ul li {
-  display: block;
-}
-
-.result label {
-  display: block;
+.transResult label {
   font-size: 10px;
   font-weight: bold;
 }
 
-.result input {
+.transResult input {
   width: 100%;
   box-sizing: border-box;
-  font-size: 18px;
-  font-weight: bold;
   border-radius: 0;
   border: 1px solid #ddd;
   cursor: default;
+  font-size: 16px;
+  padding: 6px;
+  box-sizing: border-box;
 }
 
-.result input:focus {
+.transResult input:focus {
   outline: none;
 }
