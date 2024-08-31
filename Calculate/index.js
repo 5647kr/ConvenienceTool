@@ -1,3 +1,115 @@
+const prev = document.querySelector(".prev");
+const calcResult = document.querySelector(".result");
+const calcBtn = document.querySelectorAll(".calcTable button");
+const calcState = document.querySelector(".result p");
+const calcAnswer = document.querySelector(".result strong");
+const record = document.querySelector(".prev ul")
+
+calcBtn.forEach((btn) => {
+  btn.addEventListener("click", (e) => {
+    const input = e.target.textContent;
+
+    // 계산 자리수 제한
+    if (calcAnswer.textContent.length > 9) {
+      calcAnswer.textContent = calcAnswer.textContent.slice(0, -1);
+    }
+
+    // 처음 숫자 0 처리
+    if (calcAnswer.innerText === "0" && btn.innerText !== ".") {
+      calcAnswer.innerText = btn.innerText;
+    } else if (btn.innerText === ".") {
+      // 현재 숫자(마지막 연산자 뒤에 있는 숫자)에 소수점이 포함되어 있지 않은 경우에만 추가
+      const lastNumber = calcAnswer.innerText.split(/[+\−×÷]/).pop(); // 마지막 숫자 추출
+      if (!lastNumber.includes(".")) {
+        calcAnswer.innerText += btn.innerText;
+      }
+    } else {
+      calcAnswer.innerText += btn.innerText;
+    }
+
+    // 처음 수학기호로 시작시 처리
+    const firstOperate = calcAnswer.innerText.charAt(0);
+    if (["+", "−", "×", "÷", "="].includes(firstOperate)) {
+      calcAnswer.innerText = "0";
+    }
+
+    // 초기화
+    if(btn.innerText === "C") {
+      calcAnswer.innerText = "0";
+      calcState.innerText = "0";
+    }
+
+    // 결과값
+    if(btn.innerText === "=") {
+      calcAnswer.innerText = calcAnswer.innerText.slice(0, -1);
+      calcState.innerText = calcAnswer.innerText;
+    
+      calculate();
+      const recordState = document.createElement("li");
+      const recordResult = document.createElement("li");
+
+      recordState.innerText = calcState.innerText;
+      recordResult.innerText = calcAnswer.innerText;
+      
+      record.append(recordState, recordResult)
+    }
+  });
+});
+
+function calculate() {
+  // 수식을 연산자와 숫자로 분리
+  let operators = calcState.innerText.match(/[+\−×÷]/g); // 연산자 배열
+  let numbers = calcState.innerText.split(/[+\−×÷]/g).map(Number); // 숫자 배열
+
+  // 곱셈과 나눗셈을 먼저 처리
+  while (operators.includes("×") || operators.includes("÷")) {
+    for (let i = 0; i < operators.length; i++) {
+      if (operators[i] === "×") {
+        numbers[i] = numbers[i] * numbers[i + 1];
+        numbers.splice(i + 1, 1); // 다음 숫자를 제거
+        operators.splice(i, 1);   // 해당 연산자를 제거
+        break;
+      } else if (operators[i] === "÷") {
+        numbers[i] = numbers[i] / numbers[i + 1];
+        numbers.splice(i + 1, 1); // 다음 숫자를 제거
+        operators.splice(i, 1);   // 해당 연산자를 제거
+        break;
+      }
+    }
+  }
+
+  // 덧셈과 뺄셈 처리
+  while (operators.includes("+") || operators.includes("−")) {
+    for (let i = 0; i < operators.length; i++) {
+      if (operators[i] === "+") {
+        numbers[i] = numbers[i] + numbers[i + 1];
+        numbers.splice(i + 1, 1); // 다음 숫자를 제거
+        operators.splice(i, 1);   // 해당 연산자를 제거
+        break;
+      } else if (operators[i] === "−") {
+        numbers[i] = numbers[i] - numbers[i + 1];
+        numbers.splice(i + 1, 1); // 다음 숫자를 제거
+        operators.splice(i, 1);   // 해당 연산자를 제거
+        break;
+      }
+    }
+  };
+
+  let resultNum = numbers[0] + ""; // 최종 결과는 남아 있는 유일한 숫자
+  if(resultNum.length > 15) {
+    resultNum = resultNum.slice(0, 15);
+  }
+  calcAnswer.innerText = resultNum;
+}
+
+
+
+
+
+
+
+
+
 const translate = document.querySelector(".translate");
 let temperateInput = translate.querySelector(".temperate .transInput input");
 let temperateSelect = translate.querySelector(".temperate .transInput select");
