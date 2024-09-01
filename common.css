@@ -1,5 +1,5 @@
 /* reset css */
-div, ul, li, a {
+div, ul, li, a, h1, h2, h3, p, strong {
   margin: 0;
   padding: 0;
   list-style: none;
