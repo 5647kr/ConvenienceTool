@@ -95,6 +95,29 @@ table tbody td {
   text-align: center;
 }
 
+.calcDate input {
+  width: 150px;
+  border-radius: 0;
+  border: none;
+  border-bottom: 1px solid #ddd;
+  margin: 0 16px;
+  text-align: center;
+  font-size: 16px;
+}
+
+.calcDate p {
+  margin-bottom: 24px;
+}
+
+.calcDate input:focus {
+  outline: none;
+}
+
+.calcDate .afterDate {
+  font-size: 16px;
+}
+
+
 
 article {
   border: 1px solid #ddd;
