@@ -117,3 +117,48 @@ function endDateCalc() {
 }
 
 endDateCalc();
+
+
+function calendar(year, month) {
+  const calendar = document.querySelector("table");
+  const calendarTime = calendar.querySelector("caption time");
+  const calendarYear = calendar.querySelector("caption .year")
+  const calendarMonth = calendar.querySelector("caption .month");
+  const calendarDay = calendar.querySelectorAll("tr td")
+
+
+  const startMonth = new Date(year, month - 1, 1);
+  const monthLength = new Date(year, month, 0).getDate();
+
+  let todayYear = startMonth.getFullYear();
+  let todayMonth = startMonth.getMonth();
+  let todayDate = startMonth.getDate();
+  let todayDay = startMonth.getDay();
+
+  for(let i = 0; i < calendarDay.length; i++) {
+    calendarDay[i].innerHTML = "&nbsp;";
+  }
+  for(let i = todayDay; i < todayDay + monthLength; i++) {
+    calendarDay[i].textContent = todayDate++;
+  }
+
+  calendarYear.textContent = todayYear;
+  calendarMonth.textContent = todayMonth + 1;
+  calendarTime.dateTime = `${todayYear}-${todayMonth + 1}`
+}
+
+const prevBtn = document.querySelector(".prevBtn");
+const afterBtn = document.querySelector(".afterBtn");
+console.log(prevBtn, afterBtn)
+
+prevBtn.addEventListener("click", () => {
+  calendar(year, --month);
+})
+afterBtn.addEventListener("click", () => {
+  calendar(year, ++month);
+})
+
+let year = date.getFullYear();
+let month = date.getMonth() + 1;
+
+calendar(year, month);
