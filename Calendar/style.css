@@ -1,4 +1,4 @@
-table, tr, th, td {
+table, tr, th, td, strong, p, caption {
   padding: 0;
   margin: 0;
 }
@@ -37,10 +37,19 @@ table, tr, th, td {
 
 .calendar caption {
   background-color: #ddd;
-  font-size: 60px;
   padding: 14px 0;
   box-sizing: border-box;
   position: relative;
+  text-align: center;
+}
+
+caption strong {
+  font-size: 20px;
+  margin: 8px 0 20px;
+}
+
+caption p {
+  font-size: 40px;
 }
 
 table tbody {
@@ -50,10 +59,9 @@ table tbody {
 
 table tbody tr {
   width: 100%;
-  height: calc(100% / 6);
+  height: calc(100% / 7);
   display: flex;
   justify-content: space-between;
-  border-collapse: collapse;
 }
 
 table tbody th,
@@ -61,9 +69,15 @@ table tbody td {
   width: 100%;
   font-weight: bold;
   border: 1px solid #ddd;
+  border-collapse: collapse;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+table tbody tr th:first-child,
+table tbody tr td:first-child {
+  color: #FF0000;
 }
 
 
@@ -75,6 +89,7 @@ table tbody td {
   border: 1px solid #ddd;
   border-radius: 0;
   background-color: #fff;
+  cursor: pointer;
 }
 
 .calendar .prevBtn {
